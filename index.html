@@ -1,0 +1,836 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amanda Gary – Author Visibility & Book Marketing Strategist</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, serif; background: #1a2340; color: #e8e0d0; }
+
+  /* TOP BAR */
+  .topbar {
+    background: #c9a84c;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.85rem;
+    color: #1a2340;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+  /* NAV */
+  nav {
+    background: #1a2340;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2e3f6e;
+  }
+  nav .logo { color: #c9a84c; font-size: 1.1rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+  nav a { color: #e8e0d0; text-decoration: none; margin-left: 24px; font-size: 0.85rem; letter-spacing: 1px; }
+  nav a:hover { color: #c9a84c; }
+
+  /* HERO */
+  .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 30px 60px;
+  }
+  .badge {
+    display: inline-block;
+    border: 1px solid #c9a84c;
+    color: #c9a84c;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+  .hero h1 { font-size: 3rem; color: #e8e0d0; line-height: 1.2; margin-bottom: 20px; }
+  .hero h1 span { color: #c9a84c; }
+  .hero p { font-size: 1rem; color: #b0a898; margin-bottom: 12px; max-width: 580px; }
+  .hero .sub { font-size: 0.85rem; color: #7a8aaa; margin-bottom: 36px; }
+  .btn {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #c9a84c;
+    color: #c9a84c;
+    padding: 14px 32px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+  }
+  .btn:hover { background: #c9a84c; color: #1a2340; }
+  .btn-gold { background: #c9a84c; color: #1a2340; }
+  .btn-gold:hover { background: #b8933e; border-color: #b8933e; color: #1a2340; }
+
+  /* STATS */
+  .stats {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px 60px;
+    display: flex;
+    gap: 60px;
+    border-top: 1px solid #2e3f6e;
+  }
+  .stat h2 { font-size: 2.5rem; color: #c9a84c; }
+  .stat p { font-size: 0.8rem; color: #7a8aaa; margin-top: 4px; }
+
+  /* TICKER */
+  .ticker {
+    background: #c9a84c;
+    color: #1a2340;
+    padding: 12px 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-block;
+    animation: ticker 30s linear infinite;
+  }
+  @keyframes ticker {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* SECTIONS */
+  section { padding: 80px 30px; }
+  .section-inner { max-width: 860px; margin: 0 auto; }
+  .section-label {
+    display: inline-block;
+    border: 1px solid #c9a84c;
+    color: #c9a84c;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    padding: 5px 14px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  h2.section-title { font-size: 2.2rem; color: #e8e0d0; margin-bottom: 16px; text-align: center; }
+  .section-sub { text-align: center; color: #7a8aaa; font-size: 0.95rem; margin-bottom: 48px; }
+
+  /* DARK SECTION */
+  .dark-section { background: #0f1829; }
+  .light-section { background: #1a2340; }
+
+  /* CARDS */
+  .card {
+    border: 1px solid #2e3f6e;
+    border-radius: 4px;
+    padding: 28px;
+    margin-bottom: 16px;
+    background: #1a2340;
+  }
+  .dark-section .card { background: #0f1829; }
+  .card-icon { font-size: 1.4rem; margin-bottom: 10px; }
+  .card h3 { color: #e8e0d0; font-size: 1rem; margin-bottom: 8px; }
+  .card p { color: #7a8aaa; font-size: 0.88rem; line-height: 1.6; }
+
+  /* STEPS */
+  .step { display: flex; gap: 20px; margin-bottom: 20px; }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: #c9a84c; color: #1a2340;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.9rem; flex-shrink: 0;
+  }
+  .step-content h3 { color: #e8e0d0; margin-bottom: 6px; }
+  .step-content p { color: #7a8aaa; font-size: 0.88rem; line-height: 1.6; }
+
+  /* RESULTS */
+  .result-card {
+    border: 1px solid #2e3f6e;
+    border-radius: 4px;
+    padding: 28px;
+    margin-bottom: 20px;
+    background: #0f1829;
+  }
+  .result-tag {
+    display: inline-block;
+    border: 1px solid #c9a84c;
+    color: #c9a84c;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .result-card h3 { color: #e8e0d0; margin-bottom: 12px; font-size: 1rem; }
+  .result-card p { color: #7a8aaa; font-size: 0.85rem; margin-bottom: 6px; }
+  .result-card p strong { color: #c9a84c; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .tag {
+    background: #1a2340;
+    border: 1px solid #2e3f6e;
+    color: #c9a84c;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* ===== AUTHORS SECTION ===== */
+  .authors-section {
+    background: #0f1829;
+    padding: 80px 30px;
+  }
+  .authors-inner { max-width: 860px; margin: 0 auto; }
+  .authors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 48px;
+  }
+  .author-card {
+    background: #1a2340;
+    border: 1px solid #2e3f6e;
+    border-radius: 8px;
+    padding: 28px 24px;
+    width: 220px;
+    text-align: center;
+  }
+  .author-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #c9a84c;
+    margin-bottom: 14px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: #2e3f6e;
+  }
+  .author-name {
+    font-size: 1rem;
+    color: #e8e0d0;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .author-book-link {
+    display: inline-block;
+    margin: 10px auto 12px;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  .author-book-link:hover { transform: scale(1.05); }
+  .author-book-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 2px solid #2e3f6e;
+    display: block;
+    margin: 0 auto;
+    background: #2e3f6e;
+  }
+  .author-book-title {
+    font-size: 0.72rem;
+    color: #7a8aaa;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .author-email-link {
+    display: inline-block;
+    font-size: 0.78rem;
+    color: #c9a84c;
+    word-break: break-all;
+    text-decoration: underline;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .author-email-link:hover { color: #e8b84b; }
+
+  /* GENRES */
+  .genre-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 32px; }
+  .genre-tag {
+    border: 1px solid #2e3f6e;
+    color: #b0a898;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+  }
+
+  /* FAQ */
+  .faq-item { border-bottom: 1px solid #2e3f6e; padding: 22px 0; }
+  .faq-item h3 { color: #e8e0d0; font-size: 0.95rem; margin-bottom: 10px; }
+  .faq-item p { color: #7a8aaa; font-size: 0.88rem; line-height: 1.6; }
+
+  /* SERVICES */
+  .service-card {
+    border: 1px solid #2e3f6e;
+    border-radius: 4px;
+    padding: 28px;
+    margin-bottom: 16px;
+    background: #1a2340;
+  }
+  .service-card h3 { color: #e8e0d0; margin-bottom: 4px; }
+  .service-subtitle { color: #c9a84c; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
+  .service-card p { color: #7a8aaa; font-size: 0.88rem; margin-bottom: 14px; }
+  .service-card ul { list-style: none; }
+  .service-card ul li { color: #7a8aaa; font-size: 0.83rem; padding: 3px 0; }
+  .service-card ul li::before { content: "✓ "; color: #c9a84c; }
+
+  /* WHAT SETS APART */
+  .apart-box {
+    background: #0f1829;
+    border: 1px solid #2e3f6e;
+    border-radius: 4px;
+    padding: 28px;
+    margin-top: 30px;
+  }
+  .apart-box h3 { color: #c9a84c; margin-bottom: 14px; }
+  .apart-box ul { list-style: none; }
+  .apart-box ul li { color: #7a8aaa; font-size: 0.88rem; padding: 4px 0; }
+  .apart-box ul li::before { content: "✓ "; color: #c9a84c; }
+
+  /* ABOUT */
+  .about-grid { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; }
+  .about-text { flex: 1; min-width: 260px; }
+  .about-text p { color: #7a8aaa; font-size: 0.9rem; line-height: 1.8; margin-bottom: 16px; }
+  .about-photo {
+    width: 180px; height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #c9a84c;
+    background: #2e3f6e;
+    flex-shrink: 0;
+  }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: #0f1829;
+    text-align: center;
+    padding: 70px 30px;
+    border-top: 1px solid #2e3f6e;
+    border-bottom: 1px solid #2e3f6e;
+  }
+  .cta-banner h2 { font-size: 1.8rem; color: #e8e0d0; margin-bottom: 12px; }
+  .cta-banner p { color: #7a8aaa; font-size: 0.9rem; margin-bottom: 24px; }
+
+  /* FORM */
+  .form-section { background: #1a2340; padding: 80px 30px; }
+  .form-inner { max-width: 760px; margin: 0 auto; }
+  .form-box {
+    background: #0f1829;
+    border: 1px solid #2e3f6e;
+    border-radius: 4px;
+    padding: 40px;
+  }
+  .form-box h3 { color: #e8e0d0; font-size: 1.2rem; margin-bottom: 6px; }
+  .form-box .form-sub { color: #7a8aaa; font-size: 0.85rem; margin-bottom: 28px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; color: #e8e0d0; font-size: 0.85rem; margin-bottom: 8px; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: #1a2340;
+    border: 1px solid #2e3f6e;
+    color: #e8e0d0;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    border-radius: 3px;
+    font-family: Georgia, serif;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: #4a5a7a; }
+  .form-group textarea { height: 120px; resize: vertical; }
+  .form-group select option { background: #1a2340; }
+  .btn-submit {
+    width: 100%;
+    background: #c9a84c;
+    color: #1a2340;
+    border: none;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+    font-family: Georgia, serif;
+  }
+  .btn-submit:hover { background: #b8933e; }
+  .form-email-note { text-align: center; margin-top: 16px; color: #7a8aaa; font-size: 0.82rem; }
+  .form-email-note a { color: #c9a84c; }
+
+  /* WHAT HAPPENS */
+  .what-happens { margin-top: 36px; }
+  .what-happens h3 { color: #e8e0d0; font-size: 0.95rem; margin-bottom: 16px; }
+  .what-happens ol { list-style: none; counter-reset: wh; }
+  .what-happens ol li {
+    counter-increment: wh;
+    display: flex; align-items: flex-start; gap: 14px;
+    color: #7a8aaa; font-size: 0.88rem; margin-bottom: 12px;
+  }
+  .what-happens ol li::before {
+    content: counter(wh);
+    background: #c9a84c; color: #1a2340;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: bold; flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* COMMITMENTS */
+  .commitments {
+    background: #1a2340;
+    border: 1px solid #2e3f6e;
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin-top: 28px;
+  }
+  .commitments h3 { color: #c9a84c; margin-bottom: 12px; font-size: 0.9rem; }
+  .commitments ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 24px; }
+  .commitments ul li { color: #7a8aaa; font-size: 0.83rem; }
+  .commitments ul li::before { content: "✓ "; color: #c9a84c; }
+
+  /* TESTIMONIALS */
+  .testimonials { margin-top: 32px; }
+  .testimonial {
+    border-left: 3px solid #c9a84c;
+    padding: 12px 20px;
+    margin-bottom: 14px;
+    color: #7a8aaa;
+    font-style: italic;
+    font-size: 0.88rem;
+    background: #0f1829;
+  }
+
+  /* FOOTER */
+  .footer-cta {
+    background: #1a2340;
+    text-align: center;
+    padding: 70px 30px;
+  }
+  .footer-cta h2 { font-size: 1.8rem; color: #e8e0d0; margin-bottom: 20px; }
+  .footer-cta p { color: #7a8aaa; font-size: 0.9rem; max-width: 600px; margin: 0 auto 30px; }
+  .footer-cta .note { font-size: 0.78rem; color: #4a5a7a; margin-top: 14px; }
+
+  footer {
+    background: #0f1829;
+    padding: 40px 30px 24px;
+    border-top: 1px solid #2e3f6e;
+  }
+  .footer-inner { max-width: 860px; margin: 0 auto; }
+  footer .footer-name { color: #c9a84c; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+  footer .footer-role { color: #7a8aaa; font-size: 0.82rem; margin-bottom: 6px; }
+  footer .footer-email a { color: #c9a84c; text-decoration: none; font-size: 0.82rem; }
+  footer .footer-copy { color: #4a5a7a; font-size: 0.75rem; margin-top: 24px; border-top: 1px solid #2e3f6e; padding-top: 16px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .stats { flex-wrap: wrap; gap: 30px; }
+    .about-grid { flex-direction: column; }
+    .about-photo { width: 130px; height: 130px; }
+    nav .links { display: none; }
+    .authors-grid { gap: 24px; }
+    .author-card { width: 100%; max-width: 300px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">✦ Currently accepting new authors for 2025. Free book assessment available. No obligation.</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Amanda Gary</div>
+  <div class="links">
+    <a href="#signs">Signs</a>
+    <a href="#services">Services</a>
+    <a href="#authors">Authors</a>
+    <a href="#results">Results</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="btn btn-gold" style="padding:8px 18px;font-size:0.78rem;">Free Assessment</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">Author Visibility & Book Marketing Strategist</div>
+  <h1>Discovery gap analysis & <span>author visibility</span></h1>
+  <p>Your book has readers. They just can't find it yet.</p>
+  <p>I analyze your book's Amazon ranking, category placement, keyword targeting, review patterns, and audience signals to identify exactly why your ideal readers aren't discovering your work. Then I build the strategy to fix it.</p>
+  <p class="sub">200+ authors across 15+ genres. Data-first approach. Relationship-centered results.</p>
+  <a href="#contact" class="btn">Get Your Free Book Assessment</a>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><h2>200+</h2><p>Authors helped across 15+ genres</p></div>
+  <div class="stat"><h2>10+</h2><p>Years analyzing book markets</p></div>
+  <div class="stat"><h2>100%</h2><p>Free assessment before you commit</p></div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <span class="ticker-inner">
+    ✦ 200+ Authors Helped &nbsp;&nbsp; ✦ 15+ Genres Covered &nbsp;&nbsp; ✦ Amazon Rankings Transformed &nbsp;&nbsp; ✦ Category Placement Optimized &nbsp;&nbsp; ✦ Series Funnels Built &nbsp;&nbsp; ✦ Backlists Revived &nbsp;&nbsp; ✦ Review Strategies Executed &nbsp;&nbsp; ✦ Data-Driven Strategies &nbsp;&nbsp; ✦ BookTok Campaigns Launched &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>
+</div>
+
+<!-- 8 SIGNS -->
+<section class="dark-section" id="signs">
+  <div class="section-inner">
+    <div style="text-align:center"><span class="section-label">Sound Familiar?</span></div>
+    <h2 class="section-title">The 8 Signs Your Book Has a Discovery Problem,<br>Not a Quality Problem</h2>
+    <p class="section-sub">If even 2 or 3 of these feel familiar, your book almost certainly has a positioning gap that's blocking readers from finding it.</p>
+
+    <div class="card"><div class="card-icon">📉</div><h3>"My reviews are great but nobody's finding the book"</h3><p>You have a 4.0+ rating. Readers who find it love it. But your BSR is stuck past #500,000 and organic discovery has completely stalled. The quality is there. The visibility infrastructure is not.</p></div>
+    <div class="card"><div class="card-icon">🚀</div><h3>"I launched and it just… disappeared"</h3><p>You did the launch posts, told your friends, maybe ran a small promo. There was a brief spike, then nothing. Three months later, it feels like the book never existed. That's a launch strategy gap, not a book problem.</p></div>
+    <div class="card"><div class="card-icon">🗺️</div><h3>"I don't know who my readers are or where they gather"</h3><p>You wrote the book, but you can't describe your ideal reader with precision. Without that map, marketing is just guessing.</p></div>
+    <div class="card"><div class="card-icon">📂</div><h3>"I think I'm in the wrong categories but don't know which are right"</h3><p>Amazon has 16,000+ categories. Being in the wrong 3 means your book is invisible to readers who would love it. This is the single most common fixable problem.</p></div>
+    <div class="card"><div class="card-icon">📚</div><h3>"Readers love Book 1 but never buy Book 2"</h3><p>Your series has a read-through leak. The cause is almost always a back-matter funnel gap: no next-book link, no newsletter CTA, or a Book 2 blurb that doesn't hook.</p></div>
+    <div class="card"><div class="card-icon">👻</div><h3>"I have a backlist that's just sitting there doing nothing"</h3><p>You published 2, 3, or 5+ books. The early ones stopped selling entirely. Those books still have value — they just need repositioning, refreshed metadata, and reintroduction.</p></div>
+    <div class="card"><div class="card-icon">😵</div><h3>"Marketing feels overwhelming and I don't know what actually works"</h3><p>You've been told to do newsletters, BookTok, Instagram, blog tours, Amazon ads, and 47 other things. You need a filter, not more noise.</p></div>
+    <div class="card"><div class="card-icon">💸</div><h3>"I'm spending money on marketing but can't tell if it's working"</h3><p>You've tried ads, promos, or paid services. You have no framework to evaluate what moved the needle. You need a data baseline, not more tactics.</p></div>
+
+    <div style="text-align:center;margin-top:40px">
+      <p style="color:#7a8aaa;font-size:0.9rem;margin-bottom:20px">I'll look at your book's actual signals and tell you exactly what I see. No cost, no obligation.</p>
+      <a href="#contact" class="btn">Get a Free Assessment of Your Book's Data</a>
+    </div>
+  </div>
+</section>
+
+<!-- UNDER THE HOOD -->
+<section class="light-section">
+  <div class="section-inner">
+    <div style="text-align:center"><span class="section-label">Under the Hood</span></div>
+    <h2 class="section-title">What I Look at When I Analyze Your Book</h2>
+    <p class="section-sub">Before I make a single recommendation, I examine these real, observable data signals. No guessing. No generic advice.</p>
+
+    <div class="card"><h3>Best Sellers Rank</h3><p>Where you rank overall and in each category, and what the trajectory tells us about momentum.</p></div>
+    <div class="card"><h3>Category Placement</h3><p>Whether your 3 categories align with where your actual readers browse and discover new books.</p></div>
+    <div class="card"><h3>Keywords & Search</h3><p>Whether your backend keywords match what readers type when looking for books like yours.</p></div>
+    <div class="card"><h3>Also-Bought Carousel</h3><p>Whether the books next to yours attract the same readers or send them elsewhere entirely.</p></div>
+    <div class="card"><h3>Review Patterns</h3><p>What readers say, how fast reviews accumulate, and what sentiment signals reveal.</p></div>
+    <div class="card"><h3>Pricing Strategy</h3><p>Whether your price signals the right genre, quality tier, and reader expectations.</p></div>
+    <div class="card"><h3>Blurb & Cover Signals</h3><p>Whether your packaging triggers the genre expectations your ideal readers carry.</p></div>
+    <div class="card"><h3>Platform Presence</h3><p>Your visibility on Amazon, Goodreads, BookBub, social platforms, and reader communities.</p></div>
+    <div class="card"><h3>Series Ecosystem</h3><p>Read-through rates, back-matter funnels, series entry point optimization.</p></div>
+    <div class="card"><h3>Metadata Quality</h3><p>Subtitle, A+ Content, editorial reviews, and every piece of discoverability infrastructure.</p></div>
+
+    <div style="text-align:center;margin-top:40px">
+      <a href="#contact" class="btn">Send Me Your Book Link for a Free Look</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="dark-section">
+  <div class="section-inner">
+    <div style="text-align:center"><span class="section-label">How It Works</span></div>
+    <h2 class="section-title">Six Steps from Invisible to Discoverable</h2>
+    <p class="section-sub">Every engagement follows this sequence. Clear, documented, no surprises.</p>
+
+    <div class="step"><div class="step-num">1</div><div class="step-content"><h3>You Share Your Book</h3><p>Send me your title, genre, and Amazon link. That's all I need. I look at the publicly available data before we even talk.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><h3>I Analyze the Signals</h3><p>BSR trajectory, category placement, keyword alignment, review patterns, also-bought health, pricing, platform presence, and competitive landscape.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><h3>I Identify the Gaps</h3><p>Exactly 3 specific, data-backed discovery or positioning gaps. Not vague observations. Precise signals showing where and why readers can't find your book.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><h3>I Build the Strategy</h3><p>For each gap, a corresponding market move. Exact categories, keywords, pricing adjustments, funnel fixes, and community targets. Actionable, not theoretical.</p></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-content"><h3>You Implement with Support</h3><p>A written strategy document with prioritized action steps. Email support during implementation. I answer questions as they come up and help troubleshoot.</p></div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-content"><h3>We Measure and Adjust</h3><p>After changes take effect, I review the data again. What moved? What needs refinement? Strategy evolves based on real market response.</p></div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="light-section">
+  <div class="section-inner">
+    <div style="text-align:center"><span class="section-label">About Amanda</span></div>
+    <h2 class="section-title" style="margin-bottom:40px">I find the gap between your book and its readers. Then I close it.</h2>
+    <div class="about-grid">
+      <img src="Amanda.jpg" alt="Amanda Gary" class="about-photo">
+      <div class="about-text">
+        <p>Most authors don't have a quality problem. They have a discovery problem. Their book sits in the wrong categories, targets keywords nobody searches, has a blurb that doesn't signal the right tropes, or ranks so low that no algorithm will ever surface it organically.</p>
+        <p>I started by noticing patterns. Why do some books with 4.5-star ratings and passionate reviews stay invisible while others with weaker content gain momentum? The answer is almost never writing quality. It's positioning, metadata, category alignment, and whether your book appears where your natural readers actually browse.</p>
+        <p>Today I combine deep market analysis with reader community intelligence. I look at your BSR trajectory, your also-bought carousel health, your category placement accuracy, your review velocity, your keyword targeting, your pricing strategy, and your platform presence. Then I build a clear, actionable plan that connects the dots.</p>
+        <p>I don't sell hype. I don't guarantee bestseller lists. I don't use tactics that risk your reputation. What I do is study your book's actual market signals, identify the specific gaps preventing discovery, and create strategies that put your book where the right readers are already looking.</p>
+      </div>
+    </div>
+    <div class="apart-box">
+      <h3>What Sets This Apart</h3>
+      <ul>
+        <li>Every recommendation based on observable data, not opinions</li>
+        <li>I look at your book's actual market position before suggesting anything</li>
+        <li>Strategies are genre-specific, not one-size-fits-all</li>
+        <li>I tell you what NOT to do as often as what to do</li>
+        <li>No fake reviews, no manipulation, no reputation risks</li>
+        <li>Honest about what I can and can't help with</li>
+        <li>Free assessment before you commit to anything</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORS SECTION -->
+<section class="authors-section" id="authors">
+  <div class="authors-inner">
+    <div style="text-align:center"><span class="section-label">Featured Authors</span></div>
+    <h2 class="section-title">Authors I've Worked With</h2>
+    <p class="section-sub">Click a book cover to view it on Amazon. Click an email to reach out directly.</p>
+
+    <div class="authors-grid">
+
+      <!-- Author 1: Rachael C. Duncan -->
+      <div class="author-card">
+        <img src="RACHEAL.jpg" alt="Rachael C. Duncan" class="author-photo">
+        <div class="author-name">Rachael C. Duncan</div>
+        <a href="https://www.amazon.com/s?k=Redeemed+Rachael+C+Duncan" target="_blank" class="author-book-link" title="View Redeemed on Amazon">
+          <img src="REDEEMED.jpg" alt="Redeemed" class="author-book-img">
+          <div class="author-book-title">Redeemed</div>
+        </a>
+        <a href="mailto:rachaelcduncan@gmail.com" class="author-email-link">rachaelcduncan@gmail.com</a>
+      </div>
+
+      <!-- Author 2: Kate Cullen -->
+      <div class="author-card">
+        <img src="KATE.jpg" alt="Kate Cullen" class="author-photo">
+        <div class="author-name">Kate Cullen</div>
+        <a href="https://www.amazon.com/s?k=Game+On+Boys+PlayStation+Play-offs+Kate+Cullen" target="_blank" class="author-book-link" title="View Game On Boys! on Amazon">
+          <img src="GAME.jpg" alt="Game On Boys! The PlayStation Play-offs" class="author-book-img">
+          <div class="author-book-title">Game On Boys! The PlayStation Play-offs</div>
+        </a>
+        <a href="mailto:katecullen93@gmail.com" class="author-email-link">katecullen93@gmail.com</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="dark-section" id="services">
+  <div class="section-inner">
+    <div style="text-align:center"><span class="section-label">Services</span></div>
+    <h2 class="section-title">Targeted Services for Specific Needs</h2>
+    <p class="section-sub">Choose a focused service or combine several. Every engagement is built around your book's actual data and market position.</p>
+
+    <div class="service-card">
+      <h3>🔍 Amazon & Metadata Optimization</h3>
+      <div class="service-subtitle">Categories • Keywords • Algorithm</div>
+      <p>Fix the infrastructure that determines whether Amazon surfaces your book or buries it.</p>
+      <ul><li>Category repositioning into high-fit, lower-competition categories</li><li>Keyword research aligned with reader search behavior</li><li>Book description optimization for algorithm and conversion</li><li>A+ Content strategy and layout</li><li>Backend keyword and BISAC alignment</li></ul>
+    </div>
+    <div class="service-card">
+      <h3>📊 Reader Audience Mapping</h3>
+      <div class="service-subtitle">Comp Titles • Also-Boughts • Communities</div>
+      <p>Identify exactly who your readers are, where they browse, and how to position your book in their path.</p>
+      <ul><li>Comp title analysis and also-bought carousel mapping</li><li>Reader demographic and psychographic profiling</li><li>Community identification across platforms</li><li>Audience overlap with similar-tier authors</li><li>Genre adjacency and crossover opportunities</li></ul>
+    </div>
+    <div class="service-card">
+      <h3>🚀 Launch & Relaunch Strategy</h3>
+      <div class="service-subtitle">Pre-Launch • Launch • Post-Launch</div>
+      <p>Research-driven launch plans built on market analysis, not generic checklists.</p>
+      <ul><li>Pre-launch market analysis and positioning</li><li>Category and keyword strategy locked before release</li><li>Review velocity plan and ARC coordination</li><li>Launch week promotional stacking</li><li>Post-launch momentum with measurable checkpoints</li></ul>
+    </div>
+    <div class="service-card">
+      <h3>📖 Book Club & Library Pipeline</h3>
+      <div class="service-subtitle">Placement • Outreach • Guides</div>
+      <p>Targeted introductions to reader communities where your book naturally belongs.</p>
+      <ul><li>Identify aligned clubs, libraries, and communities</li><li>Personalized outreach sequences</li><li>Reading guides and discussion questions</li><li>Library catalog and OverDrive placement support</li><li>Follow-up for sustained engagement</li></ul>
+    </div>
+    <div class="service-card">
+      <h3>⭐ Review & Social Proof Strategy</h3>
+      <div class="service-subtitle">Velocity • ARCs • Endorsements</div>
+      <p>Ethical review acceleration that builds genuine social proof readers trust.</p>
+      <ul><li>ARC program design and reader selection</li><li>Reviewer matching by genre and tone</li><li>Review velocity planning for algorithm favor</li><li>Editorial review outreach strategy</li><li>Goodreads and BookBub ecosystem optimization</li></ul>
+    </div>
+    <div class="service-card">
+      <h3>📚 Series & Backlist Revival</h3>
+      <div class="service-subtitle">Read-Through • Funnels • Repositioning</div>
+      <p>Fix read-through leaks and give older titles a data-informed second life.</p>
+      <ul><li>Series read-through analysis and funnel optimization</li><li>Back-matter CTA audit and improvement</li><li>Permafree and price pulsing strategy</li><li>Backlist category repositioning</li><li>Reintroduction to updated communities</li></ul>
+    </div>
+    <div class="service-card">
+      <h3>✒️ Author Brand & Positioning</h3>
+      <div class="service-subtitle">Identity • Messaging • Presence</div>
+      <p>Clarify who you are as an author so readers and industry professionals instantly understand your work.</p>
+      <ul><li>Author bios in your natural voice</li><li>Amazon and Goodreads page optimization</li><li>Website content and messaging refinement</li><li>Media kit for press and events</li><li>Consistent platform presence</li></ul>
+    </div>
+    <div class="service-card">
+      <h3>📧 Newsletter & Digital Visibility</h3>
+      <div class="service-subtitle">Email • Social • Reader Magnets</div>
+      <p>Sustainable online visibility that matches your personality and reaches your audience.</p>
+      <ul><li>Platform selection based on reader location</li><li>Newsletter setup and reader magnet strategy</li><li>Sustainable content rhythm planning</li><li>Cross-promotion and swap opportunities</li><li>BookTok and Bookstagram organic approaches</li></ul>
+    </div>
+    <div class="service-card">
+      <h3>🎙️ Publicity & Partnerships</h3>
+      <div class="service-subtitle">Podcasts • Events • Collaborations</div>
+      <p>Strategic appearances that extend your reach while still feeling authentic.</p>
+      <ul><li>Podcast and blog pitch strategy</li><li>Interview preparation and talking points</li><li>Author collaboration opportunities</li><li>Festival and event targeting for your genre</li><li>Library speaking opportunity mapping</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="light-section" id="results">
+  <div class="section-inner">
+    <div style="text-align:center"><span class="section-label">Results</span></div>
+    <h2 class="section-title">What Happens When Positioning Is Corrected</h2>
+    <p class="section-sub">Anonymized results from real engagements. The pattern is always the same: identify the gap, fix the infrastructure, readers find the book.</p>
+
+    <div class="result-card"><div class="result-tag">Fantasy Romance • Debut</div><h3>Strong reviews, zero momentum</h3><p><strong>Before:</strong> 4.3 stars, 18 reviews, BSR past #1,000,000. Wrong categories, no keyword overlap.</p><p><strong>After:</strong> Repositioned into fairy tale retelling + clean fantasy romance categories with aligned keywords.</p><div class="tags"><span class="tag">3 book club selections in 30 days</span><span class="tag">Reviews doubled in 6 weeks</span><span class="tag">BSR improved 400K+</span></div></div>
+
+    <div class="result-card"><div class="result-tag">Gothic Literary Fiction • Backlist</div><h3>Published 3 years, discovery flatlined</h3><p><strong>Before:</strong> Passionate readers, but also-bought carousel drifted to unrelated titles. No new discovery.</p><p><strong>After:</strong> Refreshed categories and keywords, targeted outreach to dark fiction book clubs and librarian networks.</p><div class="tags"><span class="tag">5 new community discussions</span><span class="tag">Renewed library interest</span><span class="tag">Backlist sales lift in 8 weeks</span></div></div>
+
+    <div class="result-card"><div class="result-tag">Women's Fiction • Uplifting</div><h3>Good book, wrong metadata signals</h3><p><strong>Before:</strong> Blurb emphasized literary qualities. Readers actually wanted emotional stories about second chances.</p><p><strong>After:</strong> Realigned blurb, categories, and keywords to match what readers search for and love.</p><div class="tags"><span class="tag">Newsletter sign-ups 3x</span><span class="tag">Engagement sustained 4+ months</span><span class="tag">Word-of-mouth restarted</span></div></div>
+
+    <div class="result-card"><div class="result-tag">Thriller / Mystery • Series</div><h3>Book 1 selling, 80% read-through drop</h3><p><strong>Before:</strong> No back-matter links, no newsletter CTA. Book 2 blurb spoiled Book 1. Readers disappeared.</p><p><strong>After:</strong> Fixed series funnel, rewrote Book 2 blurb, added proper back-matter threading.</p><div class="tags"><span class="tag">Read-through: 20% to 52%</span><span class="tag">Series revenue nearly tripled</span><span class="tag">Book 3 pre-orders exceeded Book 2</span></div></div>
+
+    <div class="result-card"><div class="result-tag">Nonfiction / Self-Help</div><h3>Strong platform, book not converting</h3><p><strong>Before:</strong> 12K email subscribers, 40+ reviews. BSR stuck. Competing in broad categories against major publishers.</p><p><strong>After:</strong> Moved to specific subcategories, added A+ Content, created reader magnet funnel from existing platform.</p><div class="tags"><span class="tag">#1 in two subcategories</span><span class="tag">Speaking-to-book conversion up</span><span class="tag">Sustained top-100 placement</span></div></div>
+
+    <div class="result-card"><div class="result-tag">Historical Fiction • Dual Timeline</div><h3>Split audience, neither could find it</h3><p><strong>Before:</strong> Reviews split between historical detail lovers and modern family drama fans. Only in general historical fiction.</p><p><strong>After:</strong> Split keyword strategy targeting both reader pools through dual-timeline and family saga categories.</p><div class="tags"><span class="tag">4 book clubs in 6 weeks</span><span class="tag">Goodreads "want to read" doubled</span><span class="tag">First library speaking invite</span></div></div>
+  </div>
+</section>
+
+<!-- GENRES -->
+<section class="dark-section">
+  <div class="section-inner">
+    <div style="text-align:center"><span class="section-label">Genres</span></div>
+    <h2 class="section-title">Deep Market Knowledge Across Genres</h2>
+    <p class="section-sub">Each genre has different discovery mechanics, reader expectations, and platform dynamics. I apply genre-specific expertise, not generic advice.</p>
+    <div class="genre-tags">
+      <span class="genre-tag">Contemporary Romance</span><span class="genre-tag">Historical Romance</span><span class="genre-tag">Fantasy Romance</span><span class="genre-tag">Paranormal Romance</span><span class="genre-tag">Dark Romance</span><span class="genre-tag">Clean Romance</span><span class="genre-tag">Epic Fantasy</span><span class="genre-tag">Urban Fantasy</span><span class="genre-tag">Cozy Fantasy</span><span class="genre-tag">LitRPG</span><span class="genre-tag">Science Fiction</span><span class="genre-tag">Thriller</span><span class="genre-tag">Mystery</span><span class="genre-tag">Suspense</span><span class="genre-tag">Horror</span><span class="genre-tag">Gothic Fiction</span><span class="genre-tag">Literary Fiction</span><span class="genre-tag">Book Club Fiction</span><span class="genre-tag">Historical Fiction</span><span class="genre-tag">Women's Fiction</span><span class="genre-tag">Family Sagas</span><span class="genre-tag">Memoir</span><span class="genre-tag">Self-Help</span><span class="genre-tag">Business</span><span class="genre-tag">Prescriptive Nonfiction</span><span class="genre-tag">YA Fantasy</span><span class="genre-tag">YA Contemporary</span><span class="genre-tag">Middle Grade</span><span class="genre-tag">Christian Fiction</span><span class="genre-tag">Christian Nonfiction</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="light-section" id="faq">
+  <div class="section-inner">
+    <div style="text-align:center"><span class="section-label">FAQ</span></div>
+    <h2 class="section-title">Questions Authors Ask Before Reaching Out</h2>
+
+    <div class="faq-item"><h3>What's this "free assessment" actually include?</h3><p>I look at your book's publicly available data: Amazon BSR, category placement, keyword alignment, review patterns, also-bought carousel, pricing, and platform presence. Then I reply with honest observations about what I see and where the gaps are. It's a genuine analysis, not a sales pitch disguised as advice.</p></div>
+    <div class="faq-item"><h3>Can you guarantee sales or bestseller status?</h3><p>No. Anyone who guarantees specific sales numbers or bestseller placement is not being honest with you. What I can guarantee is thorough research, honest analysis, data-backed strategy, and full transparency about what's realistic for your book in your market.</p></div>
+    <div class="faq-item"><h3>How is this different from other book marketing services?</h3><p>Most book marketers sell packages: social media posts, press releases, generic promotional templates. I start with your book's actual data. I look at your Amazon signals before I make any recommendations. Everything I suggest is based on observable market evidence specific to your book.</p></div>
+    <div class="faq-item"><h3>How far in advance should I reach out before launch?</h3><p>Ideally 60 to 90 days before publication. That gives us time to research your market, optimize your listing before it goes live, build your ARC strategy, and position everything correctly from day one. But I also work with backlist titles and books that have been out for years.</p></div>
+    <div class="faq-item"><h3>Do you work with self-published and traditionally published?</h3><p>Both. Self-published authors typically need help with the full spectrum of visibility infrastructure. Traditionally published authors often need help filling the marketing gap their publisher left behind after the initial 6-week push.</p></div>
+    <div class="faq-item"><h3>What if I'm introverted and hate self-promotion?</h3><p>Most of my clients feel this way. Good news: the most impactful changes have nothing to do with self-promotion. Category placement, keyword optimization, pricing strategy, series funnels, metadata improvements — these are infrastructure changes that work behind the scenes.</p></div>
+    <div class="faq-item"><h3>Do you manage Amazon or Facebook ads?</h3><p>Yes. But I never recommend ads until your listing is optimized first. Driving traffic to a poorly optimized listing is like pouring water into a leaky bucket. We fix the bucket first, then turn on the faucet.</p></div>
+    <div class="faq-item"><h3>How much does it cost?</h3><p>It depends on the scope of work your situation requires. After the free assessment, I'll recommend specific services and give you clear, upfront pricing with no hidden fees. I'm not the cheapest option available. I'm the option that bases everything on your actual data.</p></div>
+    <div class="faq-item"><h3>What do you need to get started?</h3><p>Your name, your book title, your genre, and your Amazon link (if published). That's it. I'll do the initial research with publicly available data and come back to you with what I see.</p></div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="contact">
+  <div class="form-inner">
+    <div style="text-align:center"><span class="section-label">Start Here</span></div>
+    <h2 class="section-title">Send Me Your Book. I'll Tell You What the Data Shows.</h2>
+    <p class="section-sub">Free initial assessment. No obligation. I look at your book's actual signals and reply with honest observations. Every message is personally read and answered by me.</p>
+
+    <div class="form-box">
+      <h3>Free Book Assessment Request</h3>
+      <p class="form-sub">Fill this out and I'll analyze your book's data before we even speak.</p>
+
+      <form action="https://formspree.io/f/mkovaovq" method="POST">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" name="name" placeholder="e.g. Jane Arthur" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" name="email" placeholder="e.g. jane@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>Book Title, Genre, and Amazon Link *</label>
+          <input type="text" name="book_info" placeholder="e.g. The Stone Horse, historical fiction, amazon.com/dp/..." required>
+        </div>
+        <div class="form-group">
+          <label>What Do You Need Help With? *</label>
+          <select name="help_needed" required>
+            <option value="" disabled selected>Select one...</option>
+            <option>Amazon & Metadata Optimization</option>
+            <option>Reader Audience Mapping</option>
+            <option>Launch & Relaunch Strategy</option>
+            <option>Book Club & Library Pipeline</option>
+            <option>Review & Social Proof Strategy</option>
+            <option>Series & Backlist Revival</option>
+            <option>Author Brand & Positioning</option>
+            <option>Newsletter & Digital Visibility</option>
+            <option>Publicity & Partnerships</option>
+            <option>General Discovery Assessment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Timeline</label>
+          <select name="timeline">
+            <option value="" disabled selected>Select one...</option>
+            <option>Pre-launch (60+ days out)</option>
+            <option>Pre-launch (30–60 days out)</option>
+            <option>Just launched (0–3 months)</option>
+            <option>Recently published (3–12 months)</option>
+            <option>Backlist (1+ years old)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>What's Going on With Your Book Right Now?</label>
+          <textarea name="details" placeholder="The more specific you are, the more useful my assessment will be..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send for Free Assessment</button>
+      </form>
+
+      <p class="form-email-note">Prefer email? Write to <a href="mailto:amandagary619@gmail.com">amandagary619@gmail.com</a></p>
+
+      <div class="what-happens">
+        <h3>What Happens After You Hit Send</h3>
+        <ol>
+          <li>Your message arrives directly in my inbox. No assistant, no automation.</li>
+          <li>I look at your book's publicly available data before I respond.</li>
+          <li>I reply within 48 hours with honest initial observations.</li>
+          <li>If I can help, I'll explain exactly how. If I can't, I'll say so and explain why.</li>
+        </ol>
+      </div>
+
+      <div class="commitments">
+        <h3>My Commitments</h3>
+        <ul>
+          <li>No fake reviews, ever</li>
+          <li>No rating manipulation</li>
+          <li>No spam outreach</li>
+          <li>No dishonest promises</li>
+          <li>No tactics that risk your reputation</li>
+          <li>Full transparency about what I can and can't do</li>
+        </ul>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial">"I finally understand WHY my book wasn't being found."</div>
+        <div class="testimonial">"She showed me exactly what was wrong with my categories and keywords. I had no idea."</div>
+        <div class="testimonial">"For the first time, I have a plan that actually makes sense for MY book."</div>
+        <div class="testimonial">"She told me what NOT to waste money on. That alone was worth it."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <h2>Your Book Has Readers. They Just Can't Find It Yet.</h2>
+  <p>You did the extraordinary thing. You wrote a book. You created something from nothing. You put it into the world. And then the world went quiet. Not because your book wasn't good enough — because the infrastructure that connects books to readers wasn't working for you. That's fixable. That's what I do.</p>
+  <a href="#contact" class="btn btn-gold">Get Your Free Book Assessment</a>
+  <p class="note">No cost. No obligation. Just honest analysis.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Amanda Gary</div>
+    <div class="footer-role">Author Visibility & Book Marketing Specialist</div>
+    <div class="footer-email"><a href="mailto:amandagary619@gmail.com">amandagary619@gmail.com</a></div>
+    <div class="footer-copy">© 2025 Amanda Gary • Author Visibility and Book Marketing Specialist • amandagary619@gmail.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
